@@ -22,13 +22,18 @@ dependencies = [
 
     # Logging & utilities
     "python-json-logger>=2.0.7",
+
+    # HTTP client for CLI
+    "httpx>=0.26.0",
 ]
+
+[project.scripts]
+mock-event-producer = "ai_workflow_orchestrator_qc.cli.event_producer:main"
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.23.0",
-    "httpx>=0.26.0",
     "ruff>=0.3.0",
 ]
 

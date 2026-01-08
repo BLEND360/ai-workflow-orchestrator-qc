@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from ai_workflow_orchestrator_qc.api.defects import router as defects_router
 from ai_workflow_orchestrator_qc.api.health import router as health_router
 
 app = FastAPI(
@@ -7,6 +8,7 @@ app = FastAPI(
 )
 
 app.include_router(health_router)
+app.include_router(defects_router)
 
 
 @app.get("/")
