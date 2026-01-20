@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from ai_workflow_orchestrator_qc.api.health import router as health_router
+from .api.health import router as health_router
+from .context.api.v1 import router as context_router
 
 app = FastAPI(
     title="AI Workflow Orchestrator - Quality Control",
@@ -7,6 +8,7 @@ app = FastAPI(
 )
 
 app.include_router(health_router)
+app.include_router(context_router)
 
 
 @app.get("/")
